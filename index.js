@@ -62,7 +62,7 @@ app.post('/api/login', async(req, res) => {
 
 });
 
-
-app.listen(1337, () => {
+const PORT = 1337;
+app.listen(PORT, () => {
     console.log('Example app listening on port 1337!');
 });
