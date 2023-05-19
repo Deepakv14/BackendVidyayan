@@ -4,7 +4,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const User = require('./models/userModel');
 const jwt = require('jsonwebtoken');
-
+require('dotenv').config();
 mongoose.connect('mongodb://localhost:27017/quotes', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -62,7 +62,7 @@ app.post('/api/login', async(req, res) => {
 
 });
 
-const PORT = 1337;
-app.listen(PORT, () => {
+const port = process.env.PORT || 1337;
+app.listen(port, () => {
     console.log('Example app listening on port 1337!');
 });
